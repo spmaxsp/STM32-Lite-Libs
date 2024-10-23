@@ -22,6 +22,20 @@ typedef struct {
 } SL2_SPI_PinMapping_t;
 
 
+typedef struct {
+    GPIO_TypeDef *port;
+    uint32_t pin;
+    uint32_t af;
+} SL2_I2C_PinMapping_t;
+
+
+typedef struct {
+    GPIO_TypeDef *port;
+    uint32_t pin;
+    uint32_t af;
+} SL2_UART_PinMapping_t;
+
+
 #if defined(STM32G071xx)
 
     // GPIO pin definitions
@@ -141,6 +155,122 @@ typedef struct {
     #define SL2_SPI2_NSS_PB9       (SL2_SPI_PinMapping_t){GPIOB, LL_GPIO_PIN_9, LL_GPIO_AF_5}
     #define SL2_SPI2_NSS_PB12      (SL2_SPI_PinMapping_t){GPIOB, LL_GPIO_PIN_12, LL_GPIO_AF_0}
     #define SL2_SPI2_NSS_PD0       (SL2_SPI_PinMapping_t){GPIOD, LL_GPIO_PIN_0, LL_GPIO_AF_1}
+
+
+    // I2C1 pin mappings for STM32G071
+    #define SL2_I2C1_SCL_PA9       (SL2_I2C_PinMapping_t){GPIOA, LL_GPIO_PIN_9, LL_GPIO_AF_6}
+    #define SL2_I2C1_SDA_PA10      (SL2_I2C_PinMapping_t){GPIOA, LL_GPIO_PIN_10, LL_GPIO_AF_6}
+    
+    #define SL2_I2C1_SCL_PB6       (SL2_I2C_PinMapping_t){GPIOB, LL_GPIO_PIN_6, LL_GPIO_AF_6}
+    #define SL2_I2C1_SDA_PB7       (SL2_I2C_PinMapping_t){GPIOB, LL_GPIO_PIN_7, LL_GPIO_AF_6}
+    
+    #define SL2_I2C1_SCL_PB8       (SL2_I2C_PinMapping_t){GPIOB, LL_GPIO_PIN_8, LL_GPIO_AF_6}
+    #define SL2_I2C1_SDA_PB9       (SL2_I2C_PinMapping_t){GPIOB, LL_GPIO_PIN_9, LL_GPIO_AF_6}
+
+    #define SL2_I2C1_SMBA_PA1      (SL2_I2C_PinMapping_t){GPIOA, LL_GPIO_PIN_1, LL_GPIO_AF_6}
+    #define SL2_I2C1_SMBA_PB5      (SL2_I2C_PinMapping_t){GPIOB, LL_GPIO_PIN_5, LL_GPIO_AF_6}
+
+    // I2C2 pin mappings for STM32G071
+    #define SL2_I2C2_SCL_PA11      (SL2_I2C_PinMapping_t){GPIOA, LL_GPIO_PIN_11, LL_GPIO_AF_6}
+    #define SL2_I2C2_SDA_PA12      (SL2_I2C_PinMapping_t){GPIOA, LL_GPIO_PIN_12, LL_GPIO_AF_6}
+
+    #define SL2_I2C2_SCL_PB10      (SL2_I2C_PinMapping_t){GPIOB, LL_GPIO_PIN_10, LL_GPIO_AF_6}
+    #define SL2_I2C2_SDA_PB11      (SL2_I2C_PinMapping_t){GPIOB, LL_GPIO_PIN_11, LL_GPIO_AF_6}
+
+    #define SL2_I2C2_SCL_PB13      (SL2_I2C_PinMapping_t){GPIOB, LL_GPIO_PIN_13, LL_GPIO_AF_6}
+    #define SL2_I2C2_SDA_PB14      (SL2_I2C_PinMapping_t){GPIOB, LL_GPIO_PIN_14, LL_GPIO_AF_6}
+
+
+    // USART1 pin mappings for STM32G071
+    #define SL2_USART1_TX_PA9           (SL2_UART_PinMapping_t){GPIOA, LL_GPIO_PIN_9, LL_GPIO_AF_1}
+    #define SL2_USART1_RX_PA10          (SL2_UART_PinMapping_t){GPIOA, LL_GPIO_PIN_10, LL_GPIO_AF_1}
+
+    #define SL2_USART1_TX_PB6           (SL2_UART_PinMapping_t){GPIOB, LL_GPIO_PIN_6, LL_GPIO_AF_0}
+    #define SL2_USART1_RX_PB7           (SL2_UART_PinMapping_t){GPIOB, LL_GPIO_PIN_7, LL_GPIO_AF_0}
+
+    #define SL2_USART1_TX_PC4           (SL2_UART_PinMapping_t){GPIOC, LL_GPIO_PIN_4, LL_GPIO_AF_1}
+    #define SL2_USART1_RX_PC5           (SL2_UART_PinMapping_t){GPIOC, LL_GPIO_PIN_5, LL_GPIO_AF_1}
+
+    #define SL2_USART1_CTS_PA11         (SL2_UART_PinMapping_t){GPIOA, LL_GPIO_PIN_11, LL_GPIO_AF_1}
+    #define SL2_USART1_CTS_PB4          (SL2_UART_PinMapping_t){GPIOB, LL_GPIO_PIN_4, LL_GPIO_AF_4}
+
+    #define SL2_USART1_RTS_DE_CK_PA12   (SL2_UART_PinMapping_t){GPIOA, LL_GPIO_PIN_12, LL_GPIO_AF_1}
+    #define SL2_USART1_RTS_DE_CK_PB3    (SL2_UART_PinMapping_t){GPIOB, LL_GPIO_PIN_3, LL_GPIO_AF_4}
+
+    // USART2 pin mappings for STM32G071
+    #define SL2_USART2_TX_PA2           (SL2_UART_PinMapping_t){GPIOA, LL_GPIO_PIN_2, LL_GPIO_AF_1}
+    #define SL2_USART2_RX_PA3           (SL2_UART_PinMapping_t){GPIOA, LL_GPIO_PIN_3, LL_GPIO_AF_1}
+
+    #define SL2_USART2_TX_PA14          (SL2_UART_PinMapping_t){GPIOA, LL_GPIO_PIN_14, LL_GPIO_AF_1}
+    #define SL2_USART2_RX_PA15          (SL2_UART_PinMapping_t){GPIOA, LL_GPIO_PIN_15, LL_GPIO_AF_1}
+    
+    #define SL2_USART2_TX_PD5           (SL2_UART_PinMapping_t){GPIOD, LL_GPIO_PIN_5, LL_GPIO_AF_0}
+    #define SL2_USART2_RX_PD6           (SL2_UART_PinMapping_t){GPIOD, LL_GPIO_PIN_6, LL_GPIO_AF_0}
+
+    #define SL2_USART2_CTS_PA0          (SL2_UART_PinMapping_t){GPIOA, LL_GPIO_PIN_0, LL_GPIO_AF_1}
+    #define SL2_USART2_RTS_DE_CK_PA1    (SL2_UART_PinMapping_t){GPIOA, LL_GPIO_PIN_1, LL_GPIO_AF_1}
+    #define SL2_USART2_CTS_PD3          (SL2_UART_PinMapping_t){GPIOD, LL_GPIO_PIN_3, LL_GPIO_AF_0}
+    #define SL2_USART2_RTS_DE_CK_PD4    (SL2_UART_PinMapping_t){GPIOD, LL_GPIO_PIN_4, LL_GPIO_AF_0}
+
+    // USART3 pin mappings for STM32G071
+    #define SL2_USART3_TX_PA5           (SL2_UART_PinMapping_t){GPIOA, LL_GPIO_PIN_5, LL_GPIO_AF_4}
+    #define SL2_USART3_RX_PB0           (SL2_UART_PinMapping_t){GPIOB, LL_GPIO_PIN_0, LL_GPIO_AF_4}
+
+    #define SL2_USART3_TX_PB2           (SL2_UART_PinMapping_t){GPIOB, LL_GPIO_PIN_2, LL_GPIO_AF_4}
+
+    #define SL2_USART3_TX_PB8           (SL2_UART_PinMapping_t){GPIOB, LL_GPIO_PIN_8, LL_GPIO_AF_4}
+    #define SL2_USART3_RX_PB9           (SL2_UART_PinMapping_t){GPIOB, LL_GPIO_PIN_9, LL_GPIO_AF_4}
+
+    #define SL2_USART3_TX_PB10          (SL2_UART_PinMapping_t){GPIOB, LL_GPIO_PIN_10, LL_GPIO_AF_4}
+    #define SL2_USART3_RX_PB11          (SL2_UART_PinMapping_t){GPIOB, LL_GPIO_PIN_11, LL_GPIO_AF_4}
+
+    #define SL2_USART3_TX_PC4           (SL2_UART_PinMapping_t){GPIOC, LL_GPIO_PIN_4, LL_GPIO_AF_0}
+    #define SL2_USART3_RX_PC5           (SL2_UART_PinMapping_t){GPIOC, LL_GPIO_PIN_5, LL_GPIO_AF_0}
+
+    #define SL2_USART3_TX_PC10          (SL2_UART_PinMapping_t){GPIOC, LL_GPIO_PIN_10, LL_GPIO_AF_0}
+    #define SL2_USART3_RX_PC11          (SL2_UART_PinMapping_t){GPIOC, LL_GPIO_PIN_11, LL_GPIO_AF_0}
+
+    #define SL2_USART3_TX_PD8           (SL2_UART_PinMapping_t){GPIOD, LL_GPIO_PIN_8, LL_GPIO_AF_0}
+    #define SL2_USART3_RX_PD9           (SL2_UART_PinMapping_t){GPIOD, LL_GPIO_PIN_9, LL_GPIO_AF_0}
+
+    #define SL2_USART3_CTS_PA6          (SL2_UART_PinMapping_t){GPIOA, LL_GPIO_PIN_6, LL_GPIO_AF_4}
+    #define SL2_USART3_CTS_PB13         (SL2_UART_PinMapping_t){GPIOB, LL_GPIO_PIN_13, LL_GPIO_AF_4}
+
+    #define SL2_USART3_RTS_DE_CK_PA15   (SL2_UART_PinMapping_t){GPIOA, LL_GPIO_PIN_15, LL_GPIO_AF_5}
+    #define SL2_USART3_RTS_DE_CK_PB1    (SL2_UART_PinMapping_t){GPIOB, LL_GPIO_PIN_1, LL_GPIO_AF_4}
+    #define SL2_USART3_RTS_DE_CK_PB14   (SL2_UART_PinMapping_t){GPIOB, LL_GPIO_PIN_14, LL_GPIO_AF_4}
+    #define SL2_USART3_RTS_DE_CK_PD2    (SL2_UART_PinMapping_t){GPIOD, LL_GPIO_PIN_2, LL_GPIO_AF_0}
+
+    // USART4 pin mappings for STM32G071
+    #define SL2_USART4_TX_PA0           (SL2_UART_PinMapping_t){GPIOA, LL_GPIO_PIN_0, LL_GPIO_AF_4}
+    #define SL2_USART4_RX_PA1           (SL2_UART_PinMapping_t){GPIOA, LL_GPIO_PIN_1, LL_GPIO_AF_4}
+    
+    #define SL2_USART4_TX_PC10          (SL2_UART_PinMapping_t){GPIOC, LL_GPIO_PIN_10, LL_GPIO_AF_1}
+    #define SL2_USART4_RX_PC11          (SL2_UART_PinMapping_t){GPIOC, LL_GPIO_PIN_11, LL_GPIO_AF_1}
+
+    #define SL2_USART4_CTS_PB7          (SL2_UART_PinMapping_t){GPIOB, LL_GPIO_PIN_7, LL_GPIO_AF_4}
+
+    #define SL2_USART4_RTS_DE_CK_PA15   (SL2_UART_PinMapping_t){GPIOA, LL_GPIO_PIN_15, LL_GPIO_AF_4}
+    
+    // LPUART1 pin mappings for STM32G071
+    #define SL2_LPUART1_TX_PA2          (SL2_UART_PinMapping_t){GPIOA, LL_GPIO_PIN_2, LL_GPIO_AF_6}
+    #define SL2_LPUART1_RX_PA3          (SL2_UART_PinMapping_t){GPIOA, LL_GPIO_PIN_3, LL_GPIO_AF_6}
+
+    #define SL2_LPUART1_TX_PB11         (SL2_UART_PinMapping_t){GPIOB, LL_GPIO_PIN_11, LL_GPIO_AF_1}
+    #define SL2_LPUART1_RX_PB10         (SL2_UART_PinMapping_t){GPIOB, LL_GPIO_PIN_10, LL_GPIO_AF_1}
+
+    #define SL2_LPUART1_TX_PC1          (SL2_UART_PinMapping_t){GPIOC, LL_GPIO_PIN_1, LL_GPIO_AF_1}
+    #define SL2_LPUART1_RX_PC0          (SL2_UART_PinMapping_t){GPIOC, LL_GPIO_PIN_0, LL_GPIO_AF_1}    
+
+    #define SL2_LPUART1_CTS_PA6         (SL2_UART_PinMapping_t){GPIOA, LL_GPIO_PIN_6, LL_GPIO_AF_6}
+    #define SL2_LPUART1_CTS_PB13        (SL2_UART_PinMapping_t){GPIOB, LL_GPIO_PIN_13, LL_GPIO_AF_1}
+
+    #define SL2_LPUART1_RTS_DE_PB1      (SL2_UART_PinMapping_t){GPIOB, LL_GPIO_PIN_1, LL_GPIO_AF_6}
+    #define SL2_LPUART1_RTS_DE_PB12     (SL2_UART_PinMapping_t){GPIOB, LL_GPIO_PIN_12, LL_GPIO_AF_1}
+
+
+
+
     
 #else
     #error "Library not compatible with selected device (STM32G071xx) - at least for now ;) "
